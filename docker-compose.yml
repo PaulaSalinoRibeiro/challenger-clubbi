@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  front-end:
+    build: ./
+    container_name: clubbi-challenge
+    platform: linux/x86_64    

@@ -2,8 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
+import { getAll } from './api';
 
 function App() {
+
+  getAll('films')
+  .then(result => console.log(result))
+  .catch(error => console.log(error.message));
+
   return (
     <div className="App">
       <header className="App-header">
