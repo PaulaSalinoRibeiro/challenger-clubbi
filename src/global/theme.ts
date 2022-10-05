@@ -13,6 +13,7 @@ const theme: DefaultTheme = {
   },
   shadow: {
     main: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
+    secondary: '0px 3px 15px 0px rgba(0,0,0,0.71)',
   },
 };
 

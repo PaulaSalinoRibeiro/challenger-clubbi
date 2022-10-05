@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  padding: 8px 16px;
+  padding: 1.5rem 3rem;
 `;
 
 export const Label = styled.label`

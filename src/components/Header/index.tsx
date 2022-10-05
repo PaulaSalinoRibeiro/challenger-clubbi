@@ -6,7 +6,6 @@ import * as S from './styled';
 
 export function Header() {
    
-
   return (
     <S.Container>
       <img 
@@ -30,4 +29,4 @@ export function Header() {
         </S.Label>
     </S.Container>
   )
-}
+};

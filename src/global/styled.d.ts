@@ -14,6 +14,7 @@ declare module 'styled-components' {
     },
     shadow: {
       main: string,
+      secondary: string,
     },
   }
 };
