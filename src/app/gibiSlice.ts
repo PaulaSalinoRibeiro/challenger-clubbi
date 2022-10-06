@@ -16,33 +16,42 @@ export const gibiSlice = createSlice({
   reducers: {
     setFilm: (state, action: PayloadAction<IFilm[]>) => {
       state.filmList = [...action.payload];
+      state.filtered = [ ...action.payload];
     },
+
     setPeople: (state, action: PayloadAction<IPeople[]>) => {
       state.peopleList = [...action.payload];
+      state.filtered = [...action.payload];
     },
+
    setLocation: (state, action: PayloadAction<ILocation[]>) => {
       state.locationList = [...action.payload];
+      state.filtered = [...action.payload];
    },
-   setInputSearch: (state, action: PayloadAction<string>) => {
-      state.inputSearch = action.payload;
+
+   setTypeList: (state, action: PayloadAction<'filmList' | 'peopleList' | 'locationList'>) => {
+      state.typeList = action.payload;
    },
-   setFiltered: state => {
-     const { typeList, inputSearch } = state;
-     if (typeList === 'filmList') {
-       state.filmList.filter((film: IFilm) => film.title.includes(inputSearch));
+   
+   setFiltered: (state, action: PayloadAction<string>) => {
+     if( state.typeList === 'filmList' ) {
+       state.filtered = state.filmList
+       .filter((film: IFilm) => film.title.toLowerCase().includes(action.payload.toLowerCase()));
      };
 
-     if (typeList === 'peopleList') {
-       state.peopleList.filter((people: IPeople) => people.name.includes(inputSearch));
+     if( state.typeList === 'peopleList' ) {
+      state.filtered = state.peopleList
+      .filter((people: IPeople) => people.name.toLowerCase().includes(action.payload.toLowerCase()));
      };
 
-     if (typeList === 'locationList') {
-       state.locationList.filter((location: ILocation) => location.name.includes(inputSearch));
+     if( state.typeList === 'locationList' ) {
+      state.filtered = state.locationList
+      .filter((location: ILocation) => location.name.toLowerCase().includes(action.payload.toLowerCase()));
      };
    },
-    },
+  },
 });
 
-export const { setFilm, setPeople, setLocation, setInputSearch, setFiltered } = gibiSlice.actions;
+export const { setFilm, setPeople, setLocation, setTypeList, setFiltered } = gibiSlice.actions;
 
 export default gibiSlice.reducer;

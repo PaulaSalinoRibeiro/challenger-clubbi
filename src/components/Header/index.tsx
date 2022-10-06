@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setInputSearch, setFiltered } from '../../app/gibiSlice';
+import { setFiltered } from '../../app/gibiSlice';
+import { theme } from '../../global/theme';
 import { MagnifyingGlass } from 'phosphor-react';
 import { URL_LOGO } from '../../utils'; 
 
@@ -11,33 +12,37 @@ export function Header() {
   const [search, setSearch] = useState<string>('');
 
   const handleClick = () => {
-    dispatch(setInputSearch(search));
+    dispatch(setFiltered(search));
     setSearch('');
-    dispatch(setFiltered);
   };
 
   return (
     <S.Container>
       <img
-        src={URL_LOGO}
-        alt='Logo Clubbi'/>
-        <S.Label htmlFor='searchInput'>
-          <S.Input
-            id='searchInput'
-            type='text'
-            name='search'
-            value={search}
-            placeholder='Pesquisar'
-            onChange={(e) => setSearch(e.target.value)}
+        src={ URL_LOGO }
+        alt='Logo Clubbi'
+      />
+      <S.Label htmlFor='searchInput'>
+        <S.Input
+          id='searchInput'
+          type='text'
+          name='search'
+          value={search}
+          placeholder='Pesquisar'
+          onChange={ (e) => setSearch(e.target.value) }
+        />
+        <S.Button
+          type='button'
+          disabled={ !(search.length > 0) }
+          onClick={ () => handleClick() }
+        >
+          <MagnifyingGlass
+            size={ 26 } 
+            color={ theme.background.secondary } 
+            weight="bold" 
           />
-          <S.Button
-            type='button'
-            disabled={!(search.length > 0)}
-            onClick={() => handleClick()}
-          >
-            <MagnifyingGlass size={26} color={'#7C00F4'} weight="bold" />
-          </S.Button>
-        </S.Label>
+        </S.Button>
+      </S.Label>
     </S.Container>
-  )
+  );
 };

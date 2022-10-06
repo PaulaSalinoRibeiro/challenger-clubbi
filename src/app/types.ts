@@ -29,6 +29,6 @@ export interface gibiState {
   peopleList: IPeople[],
   locationList: ILocation[],
   inputSearch: string,
-  filtered: IFilm[] | IPeople[] | ILocation[],
+  filtered: any[],
   typeList: 'filmList' | 'peopleList' | 'locationList',
 };

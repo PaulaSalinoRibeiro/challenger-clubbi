@@ -1,6 +1,6 @@
-## Clubbi Challenger ##
+# Clubbi Challenger #
 
-# Tecnologias utilizadas
+## Tecnologias utilizadas ##
 
 - React
 - Redux
@@ -9,6 +9,4 @@
 - Styled-components
 - Docker
 
-# Como utilizar # 
-
-
+## Como utilizar ##
