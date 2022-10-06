@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
+import gibiReducer from './gibiSlice';
 
 export const store = configureStore({
   reducer: {
-    
+    gibi: gibiReducer
   },
 });
 

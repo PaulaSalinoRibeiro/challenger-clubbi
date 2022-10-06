@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setInputSearch } from '../../app/gibiSlice';
 import { MagnifyingGlass } from 'phosphor-react';
 import { URL_LOGO } from '../../utils'; 
 
 import * as S from './styled';
 
 export function Header() {
-   
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState<string>('');
+
+  const handleClick = () => {
+    dispatch(setInputSearch(search));
+    setSearch('');
+  };
+
   return (
     <S.Container>
       <img 
@@ -16,15 +25,16 @@ export function Header() {
             id='searchInput'
             type='text'
             name='search'
-            value=''
+            value={search}
             placeholder='Pesquisar'
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <S.Button
             type='button'
-            onClick={() => console.log('click')}
+            disabled={!(search.length > 0)}
+            onClick={() => handleClick()}
           >
-            <MagnifyingGlass size={24} />
+            <MagnifyingGlass size={26} color={'#7C00F4'} weight="bold" />
           </S.Button>
         </S.Label>
     </S.Container>
