@@ -38,11 +38,11 @@ export const gibiSlice = createSlice({
 
      if (typeList === 'locationList') {
        state.locationList.filter((location: ILocation) => location.name.includes(inputSearch));
-     }
-   }
+     };
+   },
     },
 });
 
-export const { setFilm, setPeople, setLocation, setInputSearch } = gibiSlice.actions;
+export const { setFilm, setPeople, setLocation, setInputSearch, setFiltered } = gibiSlice.actions;
 
 export default gibiSlice.reducer;

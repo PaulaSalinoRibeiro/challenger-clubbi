@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setInputSearch } from '../../app/gibiSlice';
+import { setInputSearch, setFiltered } from '../../app/gibiSlice';
 import { MagnifyingGlass } from 'phosphor-react';
 import { URL_LOGO } from '../../utils'; 
 
@@ -13,11 +13,12 @@ export function Header() {
   const handleClick = () => {
     dispatch(setInputSearch(search));
     setSearch('');
+    dispatch(setFiltered);
   };
 
   return (
     <S.Container>
-      <img 
+      <img
         src={URL_LOGO}
         alt='Logo Clubbi'/>
         <S.Label htmlFor='searchInput'>
