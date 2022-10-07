@@ -2,24 +2,25 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 import { getAll } from '../../api';
-import { setFilm } from '../../app/gibiSlice';
+import { setFilm } from '../../app/ghibhiSlice';
 import { theme } from '../../global/theme';
+import { FilmStrip, Users, MapPin } from 'phosphor-react';
 
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Buttom';
-import { FilmCard } from '../../components/FilmCard';
+import { FilmList } from '../../components/FilmList';
 import { PeopleCard } from '../../components/PeopleCard';
 import { LocationCard } from '../../components/LocationCard';
-import { FilmStrip, Users, MapPin } from 'phosphor-react';
 
 import * as S from './styled';
 
 export function Main() {
+  const endpoint = 'films';
   const dispatch = useDispatch();
-  const { typeList } = useSelector((state: RootState) => state.gibi);
+  const { typeList } = useSelector((state: RootState) => state.ghibhi);
 
   useEffect(() => {
-    getAll('films')
+    getAll(endpoint)
       .then(result => dispatch(setFilm(result)))
       .catch(error => console.log(error.message));
   }, [dispatch]);
@@ -59,23 +60,21 @@ export function Main() {
           } 
         />
       </S.Container>
-      <div>
+      <S.Card>
         {
-          typeList === 'filmList' && <FilmCard />
+          typeList === 'filmList' && <FilmList />
         }
-      </div>
-
-      <div>
+      </S.Card>
+      <S.Card>
         {
           typeList === 'peopleList' && <PeopleCard />
         }
-      </div>
-
-      <div>
+      </S.Card>
+      <S.Card>
         {
           typeList === 'locationList' && <LocationCard />
         }
-      </div>
+      </S.Card>
     </>
   );
 };

@@ -4,7 +4,7 @@ export interface IFilm {
   image: string,
   description: string,
   director: string,
-  releaseDate: string,
+  release_date: string,
 };
 
 export interface IPeople {

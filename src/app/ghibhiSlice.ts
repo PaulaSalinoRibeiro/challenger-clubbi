@@ -10,7 +10,7 @@ const initialState: gibiState = {
   typeList: 'filmList',
 };
 
-export const gibiSlice = createSlice({
+export const ghibhiSlice = createSlice({
   name: 'gibi',
   initialState,
   reducers: {
@@ -52,6 +52,6 @@ export const gibiSlice = createSlice({
   },
 });
 
-export const { setFilm, setPeople, setLocation, setTypeList, setFiltered } = gibiSlice.actions;
+export const { setFilm, setPeople, setLocation, setTypeList, setFiltered } = ghibhiSlice.actions;
 
-export default gibiSlice.reducer;
+export default ghibhiSlice.reducer;

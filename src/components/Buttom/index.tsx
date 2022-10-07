@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'; 
-import { setTypeList, setFilm, setLocation, setPeople } from '../../app/gibiSlice';
+import { setTypeList, setFilm, setLocation, setPeople } from '../../app/ghibhiSlice';
 import { getAll } from '../../api';
 import { IFilm, ILocation, IPeople } from '../../app/types';
 
@@ -22,7 +22,6 @@ export function Button ({ endpoint, icon, typeList }: Props) {
 
   const handleClick = () => {
     dispatch(setTypeList(typeList));
-    console.log(typeList, endpoint);
     getAll(endpoint)
       .then(result => dispatch(typesClickButton[typeList](result)))
       .catch(error => console.log(error));    

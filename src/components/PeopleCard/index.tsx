@@ -2,25 +2,39 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 import { IPeople } from '../../app/types';
 
+import * as S from './styled';
+
 export function PeopleCard() {
-  const { filtered } = useSelector((state: RootState) => state.gibi);
+  const { filtered } = useSelector((state: RootState) => state.ghibhi);
 
   return(
-    <div>
+    <S.Container>
       {
         filtered.map((item: IPeople) => (
-          <div key={ item.id }>
-            <h2>{ item.name }</h2>
-            <p>{ item.age }</p>
-            <p>{ item.gender }</p>
-            <div>
-              <p>Caracteristicas físicas:</p>
-              <p>Cor dos olhos: { item.eyeColor }</p>
-              <p>Cor do cabelo { item.hairColor }</p>
-            </div>
-          </div>  
+          <S.Card key={ item.id }>
+            <S.Title>
+              { item.name }
+            </S.Title>
+            <S.Age>
+              Idade: { item.age }
+            </S.Age>
+            <S.Gender>
+              Genero: { item.gender }
+            </S.Gender>
+            <S.Features>
+              <S.SubTitle>
+                Caracteristicas físicas:
+              </S.SubTitle>
+              <S.Eyes>
+                Cor dos olhos: { item.eyeColor }
+              </S.Eyes>
+              <S.Hair>
+                Cor do cabelo: { item.hairColor }
+              </S.Hair>
+            </S.Features>
+          </S.Card>  
         ))
       }
-    </div>
+    </S.Container>
   );
 };

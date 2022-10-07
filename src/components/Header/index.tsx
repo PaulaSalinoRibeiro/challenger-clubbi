@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setFiltered } from '../../app/gibiSlice';
+import { setFiltered } from '../../app/ghibhiSlice';
 import { theme } from '../../global/theme';
 import { MagnifyingGlass } from 'phosphor-react';
 import { URL_LOGO } from '../../utils'; 
