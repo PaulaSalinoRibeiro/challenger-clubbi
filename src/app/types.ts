@@ -12,8 +12,8 @@ export interface IPeople {
   name: string;
   gender: string;
   age: string;
-  eyeColor: string,
-  hairColor: string,
+  eye_color: string,
+  hair_color: string,
 };
 
 export interface ILocation {

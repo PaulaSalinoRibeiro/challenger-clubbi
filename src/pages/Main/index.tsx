@@ -9,7 +9,7 @@ import { FilmStrip, Users, MapPin } from 'phosphor-react';
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Buttom';
 import { FilmList } from '../../components/FilmList';
-import { PeopleCard } from '../../components/PeopleCard';
+import { PeopleList } from '../../components/PeopleList';
 import { LocationCard } from '../../components/LocationCard';
 
 import * as S from './styled';
@@ -67,7 +67,7 @@ export function Main() {
       </S.Card>
       <S.Card>
         {
-          typeList === 'peopleList' && <PeopleCard />
+          typeList === 'peopleList' && <PeopleList />
         }
       </S.Card>
       <S.Card>

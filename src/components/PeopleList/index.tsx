@@ -4,7 +4,7 @@ import { IPeople } from '../../app/types';
 
 import * as S from './styled';
 
-export function PeopleCard() {
+export function PeopleList() {
   const { filtered } = useSelector((state: RootState) => state.ghibhi);
 
   return(
@@ -16,22 +16,17 @@ export function PeopleCard() {
               { item.name }
             </S.Title>
             <S.Age>
-              Idade: { item.age }
+              📌 Idade: { item.age }
             </S.Age>
             <S.Gender>
-              Genero: { item.gender }
+              📌 Genero: { item.gender }
             </S.Gender>
-            <S.Features>
-              <S.SubTitle>
-                Caracteristicas físicas:
-              </S.SubTitle>
-              <S.Eyes>
-                Cor dos olhos: { item.eyeColor }
-              </S.Eyes>
-              <S.Hair>
-                Cor do cabelo: { item.hairColor }
-              </S.Hair>
-            </S.Features>
+            <S.Eyes>
+              📌 Olhos: { item.eye_color }
+            </S.Eyes>
+            <S.Hair>
+              📌 Cabelo: { item.hair_color }
+            </S.Hair>
           </S.Card>  
         ))
       }
