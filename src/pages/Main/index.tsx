@@ -10,7 +10,7 @@ import { Header } from '../../components/Header';
 import { Button } from '../../components/Buttom';
 import { FilmList } from '../../components/FilmList';
 import { PeopleList } from '../../components/PeopleList';
-import { LocationCard } from '../../components/LocationCard';
+import { LocationList } from '../../components/LocationList';
 
 import * as S from './styled';
 
@@ -72,7 +72,7 @@ export function Main() {
       </S.Card>
       <S.Card>
         {
-          typeList === 'locationList' && <LocationCard />
+          typeList === 'locationList' && <LocationList />
         }
       </S.Card>
     </>

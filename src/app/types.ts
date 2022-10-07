@@ -21,7 +21,7 @@ export interface ILocation {
   name: string,
   climate: string,
   terrain: string,
-  surfaceWater: string,
+  surface_water: string,
 };
 
 export interface gibiState {

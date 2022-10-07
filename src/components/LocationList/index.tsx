@@ -4,7 +4,7 @@ import { ILocation } from '../../app/types';
 
 import * as S from './styled';
 
-export function LocationCard() {
+export function LocationList() {
   const { filtered } = useSelector((state: RootState) => state.ghibhi);
   
   return (
@@ -15,20 +15,15 @@ export function LocationCard() {
             <S.Title>
               { item.name }
             </S.Title>
-            <S.Features>
-              <S.SubTitle>
-                Caracteristicas:
-              </S.SubTitle>
-              <S.Climate>
-                Clima: { item.climate }
-              </S.Climate>
-              <S.Terrain>
-                Tipo de terreno: { item.terrain }
-              </S.Terrain>
-              <S.SurfaceWater>
-                Água da superfície: { item.surfaceWater }
-              </S.SurfaceWater>
-            </S.Features>
+            <S.Climate>
+              📌 Clima: { item.climate }
+            </S.Climate>
+            <S.Terrain>
+              📌 Tipo de terreno: { item.terrain }
+            </S.Terrain>
+            <S.SurfaceWater>
+              📌 Água da superfície: { item.surface_water }
+            </S.SurfaceWater>
           </S.Card>
         ))
       }
