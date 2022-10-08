@@ -11,7 +11,10 @@ export function FilmList(){
     <S.Container>
       {
         filtered.map((item: IFilm) => (
-          <S.Card key={ item.id }>
+          <S.Card 
+            key={ item.id }
+            data-testid={ item.id }
+          >
             <S.CardImage>
               <S.Image
                 src={ item.image }

@@ -6,8 +6,9 @@ import { IFilm, ILocation, IPeople } from '../../app/types';
 import * as S from './styled';
 
 interface Props {
-  endpoint: 'films' | 'people' | 'locations',
   icon: any,
+  dataTestId: string,
+  endpoint: 'films' | 'people' | 'locations',
   typeList: 'filmList' | 'peopleList' | 'locationList',
 };
 
@@ -17,7 +18,7 @@ const typesClickButton = {
   locationList: (location: ILocation[]) => setLocation(location),
 };
 
-export function Button ({ endpoint, icon, typeList }: Props) {
+export function Button ({ endpoint, icon, typeList, dataTestId }: Props) {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -30,6 +31,7 @@ export function Button ({ endpoint, icon, typeList }: Props) {
   return (
     <S.Button
       type='button'
+      data-testid={dataTestId}
       onClick={ () => handleClick() }
     >
       { icon }

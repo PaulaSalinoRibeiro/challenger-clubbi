@@ -31,6 +31,7 @@ export function Main() {
       <S.Container>
         <Button
           endpoint='films'
+          dataTestId='film'
           typeList='filmList'
           icon={ 
             <FilmStrip 
@@ -41,6 +42,7 @@ export function Main() {
         />
         <Button
           endpoint='people'
+          dataTestId='people'
           typeList='peopleList'
           icon={ 
             <Users 
@@ -51,6 +53,7 @@ export function Main() {
         />
         <Button
           endpoint='locations'
+          dataTestId='locations'
           typeList='locationList'
           icon={ 
             < MapPin 
