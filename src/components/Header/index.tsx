@@ -25,6 +25,7 @@ export function Header() {
       <S.Label htmlFor='searchInput'>
         <S.Input
           id='searchInput'
+          data-testid='input-search'
           type='text'
           name='search'
           value={search}
@@ -33,6 +34,7 @@ export function Header() {
         />
         <S.Button
           type='button'
+          data-testid='button-search'
           disabled={ !(search.length > 0) }
           onClick={ () => handleClick() }
         >
