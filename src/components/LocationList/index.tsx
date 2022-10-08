@@ -11,7 +11,10 @@ export function LocationList() {
     <S.Container>
       {
         filtered.map((item: ILocation) => (
-          <S.Card key={ item.id }>
+          <S.Card 
+            key={ item.id }
+            data-testid={ item.id }
+          >
             <S.Title>
               { item.name }
             </S.Title>

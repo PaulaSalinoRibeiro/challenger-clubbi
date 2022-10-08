@@ -11,7 +11,10 @@ export function PeopleList() {
     <S.Container>
       {
         filtered.map((item: IPeople) => (
-          <S.Card key={ item.id }>
+          <S.Card 
+            key={ item.id }
+            data-testid={ item.id }
+          >
             <S.Title>
               { item.name }
             </S.Title>
